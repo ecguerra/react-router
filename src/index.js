@@ -3,10 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router, Switch} from 'react-router-dom'
+
+// it's better to keep BrowserRouter in index.js because then it wraps everything and you don't touch it again
+// Switch wraps the routes and tells the browser to use the routes being passed in
+// Switch improves performance than using router without it
+// now App just contains the routes
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Switch>
+        <App />
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
